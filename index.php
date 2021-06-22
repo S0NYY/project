@@ -193,7 +193,7 @@ switch ($page) {
 
 
 require_once(REFS_DIR . 'footer.php'); // references
-ragaca
+
 
 ?>
 
