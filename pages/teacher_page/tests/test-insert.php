@@ -1,5 +1,4 @@
 <?php
-require_once('../../../data_management/connect/connect.php');
 $teacher_id = isset($_GET['teacher']) ? $_GET['teacher'] : '';
 $group_id = isset($_POST['group']) ? $_POST['group'] : '';
 $subject_id = isset($_POST['subject']) ? $_POST['subject'] : '';
@@ -19,6 +18,6 @@ mysqli_close($conn);
 
 
 
-header('location:../../../index.php?page=test-list&teacher=' . $teacher_id);
+header('location:' . BASE_URL . '?mode=view&page=test_list&teacher=' . $teacher_id);
 ?>
 

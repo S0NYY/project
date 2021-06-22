@@ -1,13 +1,9 @@
 <?php
-require_once('../../../data_management/connect/connect.php');
-require_once('../../../data_management/function/preview_function.php');
-
-
+require_once(FUNCTION_DIR . 'preview_function.php');
 $test_id = isset($_GET['test']) ? $_GET['test'] : '';
 $teacher_id = isset($_GET['teacher']) ? $_GET['teacher'] : '';
 
 $questions = getQuestionIdsBytestId ($conn, $test_id);
-
 while ($row = mysqli_fetch_assoc($questions)) {
   $question_id = $row['question_id'];
 
@@ -31,5 +27,5 @@ while ($row = mysqli_fetch_assoc($questions)) {
   }
 
 
-header('location:../../../index.php?page=test-list&teacher=' . $teacher_id);
+header('location:' . BASE_URL . '?mode=view&page=test_list&teacher=' . $teacher_id);
 ?>

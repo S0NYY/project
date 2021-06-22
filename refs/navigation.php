@@ -108,8 +108,13 @@
             <a href="<?php echo BASE_URL; ?>#"><i class="ik ik-home"></i><span>მთავარი</span></a>
         </div>
         <div class="nav-item">
-            <a href="<?php echo BASE_URL; ?>?mode=view&page=test-list&teacher=1"><i class="ik ik-clipboard"></i><span>ტესტის შექმნა</span></a>
-            
+            <a href="<?php urlGenerator( 
+                          [
+                            'mode' => 'view', 
+                            'page' => 'test_list', 
+                            'teacher' => 1 
+                          ]
+                        )?>";><i class="ik ik-clipboard"></i><span>ტესტის შექმნა</span></a>
         </div>
           <div class="nav-item">
             <a href="<?php echo BASE_URL; ?>?mode=view&page=test_preview&teacher=1"><i class="ik ik-file-text"></i><span>შედეგები</span></a>

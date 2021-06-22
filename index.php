@@ -99,8 +99,16 @@ switch ($page) {
   //ტესტები _ კითხვა-პასუხი && ფოტოების დამატება
   // > folder_tests
 
-  case 'test-list':
+  case 'test_list':
     require_once(TEACHER_DIR . 'tests/test-list.php');
+  break;
+
+  case 'test_insert':
+    require_once(TEACHER_DIR . 'tests/test-insert.php');
+  break;
+
+  case 'test_delete':
+    require_once(TEACHER_DIR . 'tests/test-delete.php');
   break;
 
   // > folder_questions

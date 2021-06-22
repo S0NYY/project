@@ -15,7 +15,7 @@ $teacher_show_id = $teacherData['teacher_show_id'];
     <div class="card">
         <div class="card-header"><h3>კითხვის დამატება</h3></div>
         <div class="card-body">
-            <form class="forms-sample" action="index.php?page=question_insert&test=<?php echo $test_id ?>&teacher=<?php echo $teacher_id ?>  "method="post" enctype="multipart/form-data">
+            <form class="forms-sample" action="<?php urlGenerator(['mode' => 'model', 'page' => 'question_insert', 'test' => $test_id, 'teacher' => $teacher_id])?>  "method="post" enctype="multipart/form-data">
                     <div class="row">
                     <div class="col-md-9">
                         <div class="form-group">
@@ -125,75 +125,65 @@ while($row = mysqli_fetch_assoc($questions)) : // ტესტი
 $qId = $row['question_id'];
 
 ?>
-                <tr>
+<tr>
 
-                    <td>
-                        <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
+    <td>
+        <div class="d-inline-block align-middle">
+            <div class="d-inline-block">
 
 
-                                <h6><?php echo $row['head_line'];?></h6>
-                                <?php 
-                                    $getQuestionItemId = getQuestionItemId($conn, $qId);
-                                    $question_item = $getQuestionItemId['item_id'];
-                                    if ($question_item) {
-                                        $getQuestionPhotos = getQuestionPhotos($conn, $question_item);
-                                        if($getQuestionPhotos['file_name']) {
-                                            $questionImage = $getQuestionPhotos['file_name'];
-                                            if ($question_item == $qId) : ?>
-                                                <img src="img/photos_test/<?php echo $questionImage?>"  width="50">
-                                    <?php 
-                                            endif;
-                                        } 
-                                    }
-                                ?>
-                                <?php 
+                <h6><?php echo $row['head_line'];?></h6>
+                <?php 
+                    $getQuestionItemId = getQuestionItemId($conn, $qId);
+                    $question_item = $getQuestionItemId['item_id'];
+                    if ($question_item) {
+                        $getQuestionPhotos = getQuestionPhotos($conn, $question_item);
+                        if($getQuestionPhotos['file_name']) {
+                            $questionImage = $getQuestionPhotos['file_name'];
+                            if ($question_item == $qId) : ?>
+                                <img src="img/photos_test/<?php echo $questionImage?>"  width="50">
+                    <?php 
+                            endif;
+                        } 
+                    }
+                ?>
+                <?php 
 //პასუხი
-                                $answersByQId = getAnswersData($conn, $qId);
-                                while($row = mysqli_fetch_assoc($answersByQId)) :
-                                $answer_id = $row['answer_id'];
-                                $is_correct = $row['is_correct'];
-                                $isCorrectText = $is_correct ? ' (' . array_search($is_correct, $aPreferences) . ')' : ''; 
-                                ?>
-                                <p class="text-muted mb-0"><?php echo $row['body_text'] . $isCorrectText;?></p>
-                                <?php   
+                $answersByQId = getAnswersData($conn, $qId);
+                while($row = mysqli_fetch_assoc($answersByQId)) :
+                $answer_id = $row['answer_id'];
+                $is_correct = $row['is_correct'];
+                $isCorrectText = $is_correct ? ' (' . array_search($is_correct, $aPreferences) . ')' : ''; 
+                ?>
+                <p class="text-muted mb-0"><?php echo $row['body_text'] . $isCorrectText;?></p>
+                <?php   
 
-                                    $getAnswerItemId = getAnswerItemId($conn, $answer_id);
-                                    $answer_item = $getAnswerItemId['item_id'];
-                                    if ($answer_item) {
-                                        $getAnswersPhotos = getAnswersPhotos($conn, $answer_item);
-                                        if($getAnswersPhotos['file_name']) {
-                                            $answerImage = $getAnswersPhotos['file_name'];
-                                            if ($answer_item == $answer_id) : ?>
-                                                <img src="img/photos_test/<?php echo $answerImage?>"  width="50">
-                                    <?php 
-                                            endif;
-                                        } 
-                                    }
-                                    
-                                ?>
-                            </div>
-                        </div>
-                        <?php 
-                    endwhile;
+                    $getAnswerItemId = getAnswerItemId($conn, $answer_id);
+                    $answer_item = $getAnswerItemId['item_id'];
+                    if ($answer_item) {
+                        $getAnswersPhotos = getAnswersPhotos($conn, $answer_item);
+                        if($getAnswersPhotos['file_name']) {
+                            $answerImage = $getAnswersPhotos['file_name'];
+                            if ($answer_item == $answer_id) : ?>
+                                <img src="img/photos_test/<?php echo $answerImage?>"  width="50">
+                    <?php 
+                            endif;
+                        } 
+                    }
                     
-                    ?>
-                    </td>
-                    <td><?php echo $x; $x++?></td>
-                    <td><a href="<?php 
-
-                        urlGenerator( 
-                          [
-                            'mode' => 'view', 
-                            'page' => 'question_preview_edit', 
-                            'question' => $qId, 
-                            'teacher' => $teacher_id 
-                          ]
-                        );
-
-                      ?>"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
-                        <a href="<?php echo BASE_URL; ?>?mode=model&page=question_delete&question=<?php echo $qId;?>&test=<?php echo $test_id;?>&teacher=<?php echo $teacher_id;?>"><i class="ik ik-trash-2 f-16 text-red"></i></a></td>
-                    </tr>
+                ?>
+            </div>
+        </div>
+        <?php 
+    endwhile;
+    
+    ?>
+    </td>
+    <td><?php echo $x; $x++?></td>
+    <td><a href="<?php urlGenerator(['mode' => 'view', 'page' => 'question_preview_edit', 'question' => $qId, 'teacher' => $teacher_id]);?>"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
+        <a href="<?php echo BASE_URL; ?>?mode=model&page=question_delete&question=<?php echo $qId;?>&test=<?php echo $test_id;
+        urlGenerator(['mode' => 'model', 'page' => 'question_delete', 'question' => $qId, 'test' => $test_id, 'teacher' => $teacher_id])?>"><i class="ik ik-trash-2 f-16 text-red"></i></a></td>
+    </tr>
 <?php endwhile;?>
             </tbody>
         </table>

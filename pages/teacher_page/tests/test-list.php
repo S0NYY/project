@@ -17,7 +17,7 @@ $groupData = getGroupData($conn, $teacher_id);
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form class="sample-form" action="<?php echo BASE_URL; ?>pages/teacher_page/tests/test-insert.php?teacher=<?php echo $teacher_id?>"  method="post">
+                        <form class="sample-form" action="<?php urlGenerator(['mode' => 'model', 'page' => 'test_insert', 'teacher' => $teacher_id]);?>"  method="post">
                             <div class="form-group">
                                 <label for="">ჯგუფი </label>
                                 <select class="form-control select2" name="group" id="group" onchange="submitForm(this)">
@@ -71,43 +71,44 @@ $groupData = getGroupData($conn, $teacher_id);
         </div>
     </div>
 
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header"><h3>ტესტების ცხრილი</h3></div>
-                <div class="card-body">
-                    <table id="data_table" class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th class="nosort">საგანი</th>
-                                <th>ჯგუფი</th>
-                                <th class="nosort">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $x=1;
-                              $tests = getTests ($conn, $teacher_id); // ტესტები წმოღება მასწავლებელზე დაყრდნობით (ფუნქცია გვიბრუნებს ობიექტს მრავალი ჩანაწერით)
-                              while($row = mysqli_fetch_assoc($tests)) : // ობიექტის ასოცირებული მასივის სახით დაშლა (ყოველ მიმართვაზე თითო row ჩანაწერად)
-                                $test_id = $row['test_id'];
-                                
-                                $group_id = $row['group_id'];
-                                $groupNum = getGroupNumById($conn, $group_id);
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header"><h3>ტესტების ცხრილი</h3></div>
+        <div class="card-body">
+            <table id="data_table" class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th class="nosort">საგანი</th>
+                        <th>ჯგუფი</th>
+                        <th class="nosort">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $x=1;
+                      $tests = getTests ($conn, $teacher_id); // ტესტები წმოღება მასწავლებელზე დაყრდნობით (ფუნქცია გვიბრუნებს ობიექტს მრავალი ჩანაწერით)
+                      while($row = mysqli_fetch_assoc($tests)) : // ობიექტის ასოცირებული მასივის სახით დაშლა (ყოველ მიმართვაზე თითო row ჩანაწერად)
+                        $test_id = $row['test_id'];
+                        
+                        $group_id = $row['group_id'];
+                        $groupNum = getGroupNumById($conn, $group_id);
 
-                                $subject_id = $row['subject_id'];
-                                $subject_title = getSubjectTitleById($conn, $subject_id);
-                                ?>
-                            <tr>
-                                <td><?php echo $x;?></td>
-                                <td><a href="<?php echo BASE_URL; ?>?mode=view&page=question_preview_insert&test=<?php echo $test_id; ?>&teacher=<?php echo $teacher_id; ?>"><?php echo $subject_title; ?></a></td>
-                                <td><?php echo $groupNum; ?></td>
-                                <td>
-                                    <div class="table-actions">
-                                        <a href="<?php echo BASE_URL; ?>pages/teacher_page/tests/test-delete.php?test=<?php echo $test_id?>&teacher=<?php echo $teacher_id?>"><i class="ik ik-trash-2"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            
+                        $subject_id = $row['subject_id'];
+                        $subject_title = getSubjectTitleById($conn, $subject_id);
+                        ?>
+                    <tr>
+                        <td><?php echo $x;?></td>
+                        <td><a href="<?php urlGenerator(['mode' => 'view', 'page' => 'question_preview_insert', 'test' => $test_id, 'teacher' => $teacher_id]);?>">
+                        <?php echo $subject_title; ?></a></td>
+                        <td><?php echo $groupNum; ?></td>
+                        <td>
+                            <div class="table-actions">
+                                <a href="<?php urlGenerator(['mode' => 'model', 'page' => 'test_delete', 'test' => $test_id, 'teacher' => $teacher_id])?>"><i class="ik ik-trash-2"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    
                            
     <?php
   endwhile;
