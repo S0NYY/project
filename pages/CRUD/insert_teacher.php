@@ -47,6 +47,6 @@ $sql = "INSERT INTO users_teacher(username, password, teacher_id)
 
 mysqli_close($conn);
 
-//header('location: ../administrator_page/teacher_form.php');
+header('location:' . BASE_URL . '?mode=view&page=teacher_form');
 
 ?>

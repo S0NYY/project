@@ -25,12 +25,7 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
 }
-
-
-
-
-
-//header('location:../administrator_page/group_form.php');
+header('location:' . BASE_URL . '?mode=view&page=group_form');
 mysqli_close($conn);
 
 

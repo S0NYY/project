@@ -45,8 +45,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-/*header('location:student_form.php');
-header('location: ../administrator_page/student_form.php');*/
+header('location:' . BASE_URL . '?mode=view&page=student_form');
 mysqli_close($conn);
 ?>
     

@@ -56,7 +56,7 @@
                 </div>
                 
                 <div class="nav-item has-sub">
-                    <a href="<?php echo BASE_URL; ?>javascript:void(0)"><i class="ik ik-layers"></i><span>სტუდენტები</span> </a>
+                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>სტუდენტები</span> </a>
                     <div class="submenu-content">
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=student_form" class="menu-item">სტუდენტის დამატება</a>
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=students" class="menu-item">ყველა სტუდენტი</a>
@@ -64,14 +64,14 @@
                     </div>
                 </div>
                 <div class="nav-item has-sub">
-                    <a href="<?php echo BASE_URL; ?>javascript:void(0)"><i class="ik ik-layers"></i><span>მასწავლებელი</span></a>
+                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>მასწავლებელი</span></a>
                     <div class="submenu-content">
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=teacher_form" class="menu-item">მასწავლებლის დამატება</a>
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=teachers" class="menu-item">ყველა მასწავლებელი</a>
                     </div>
                 </div>
                 <div class="nav-item has-sub">
-                    <a href="<?php echo BASE_URL; ?>javascript:void(0)"><i class="ik ik-layers"></i><span>საგნები</span> </a>
+                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>საგნები</span> </a>
                     <div class="submenu-content">
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=subject_form" class="menu-item">საგნის დამატება</a>
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=subjects" class="menu-item">ყველა საგანი</a>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="nav-item has-sub">
-                    <a href="<?php echo BASE_URL; ?>javascript:void(0)"><i class="ik ik-layers"></i><span>ჯგუფები</span> </a>
+                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>ჯგუფები</span> </a>
                     <div class="submenu-content">
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=group_form" class="menu-item">ჯგუფის დამატება</a>
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=groups" class="menu-item">ყველა ჯგუფი</a>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="nav-item has-sub">
-                    <a href="<?php echo BASE_URL; ?>javascript:void(0)"><i class="ik ik-layers"></i><span>კურსები</span> </a>
+                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>კურსები</span> </a>
                     <div class="submenu-content">
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=course_form" class="menu-item">კურსის დამატება</a>
                         <a href="<?php echo BASE_URL; ?>?mode=view&page=courses" class="menu-item">ყველა კურსი</a>

@@ -8,6 +8,6 @@ if (mysqli_query($conn, $sql)) {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-//header('location:' . BASE_DIR . 'page=course_form.php');
+header('location:' . BASE_URL . '?mode=view&page=course_form');
 mysqli_close($conn);
 ?>

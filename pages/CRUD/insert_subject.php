@@ -23,7 +23,7 @@ $sql = "INSERT INTO course_subject_rel(course_id, subject_id) VALUES ('$course_i
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
 }
-//header('location:../administrator_page/subject_form.php');
+header('location:' . BASE_URL . '?mode=view&page=subject_form');
 mysqli_close($conn);
 
 ?>
