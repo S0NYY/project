@@ -29,7 +29,13 @@ require_once(FUNCTION_DIR . 'administrator_function.php');
                                 <td><?php echo $course_title ?></td>
                                 <td>
                                     <div class="table-actions">
-                                        <a href="<?php echo BASE_URL; ?>?page=delete_course&course=<?php echo $course_id ?>"><i class="ik ik-trash-2"></i></a>
+                                        <a href="<?php  urlGenerator( 
+                          [
+                            'mode' => 'model', 
+                            'page' => 'delete_course', 
+                            'course' => $course_id 
+                          ]
+                        ); ?>"><i class="ik ik-trash-2"></i></a>
                                     </div>
                                 </td>
                                 <?php  $x++;  endwhile; ?> 

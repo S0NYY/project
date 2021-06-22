@@ -14,5 +14,6 @@ $sql="UPDATE teachers SET first_name='$first_name', last_name='$last_name', mail
 } else {
   echo "Error updating record: " . mysqli_error($conn);
 }
+header('location:' . BASE_URL . '?mode=view&page=teacher_profile_preview&teacher=' . $teacher_id);
 mysqli_close($conn);
 ?>

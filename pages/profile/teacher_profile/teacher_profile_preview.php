@@ -62,7 +62,13 @@ $teacher_id = isset($_GET['teacher']) ? $_GET['teacher'] : '';
                                         </select>
                                         <div class="table-actions mt-10">
                                             <button type="submit" class="btn btn-primary">ჩასწორება</button>
-                                            <a href="<?php echo BASE_URL; ?>?page=delete_teacher&teacher=<?php echo $teacher_id?>" class="btn btn-danger">წაშლა</a>
+                                            <a href="<?php urlGenerator( 
+                                            [
+                                                'mode' => 'model', 
+                                                'page' => 'delete_teacher', 
+                                                'teacher' => $teacher_id 
+                                            ]
+                                            );?>" class="btn btn-danger">წაშლა</a>
                                         </div>
                                       </div>
                                   </form>

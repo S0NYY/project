@@ -14,6 +14,6 @@ if (!mysqli_query($conn, $sql)) {
     echo "Error updating record: " . mysqli_error($conn);
   }
 
-header('location:../administrator_page/course_form.php');
+  header('location:' . BASE_URL . '?mode=view&page=courses');
 
 ?>

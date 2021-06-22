@@ -32,8 +32,7 @@ if (mysqli_num_rows($studentSuspended) > 0){
     echo "Error updating record: " . mysqli_error($conn);
   }
 }
-
-//header('location: ../administrator_page/student_form.php');
+header('location:' . BASE_URL . '?mode=view&page=students');
 mysqli_close($conn);
 
 ?>

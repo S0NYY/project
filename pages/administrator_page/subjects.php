@@ -6,7 +6,7 @@ require_once(FUNCTION_DIR . 'administrator_function.php'); ;
             <div class="card">
                 <div class="card-header"><h3>საგნები</h3></div>
                 <div class="card-body">
-                                        <form class="forms-sample" action="../CRUD/delete_subject.php" method="post">
+                <form class="forms-sample" action="../CRUD/delete_subject.php" method="post">
                     <table id="data_table" class="table">
                         <thead>
                             <tr>
@@ -35,7 +35,13 @@ require_once(FUNCTION_DIR . 'administrator_function.php'); ;
                                 <td><?php echo $course_title ?></td>
                                 <td>
                                     <div class="table-actions">
-                                        <a href="<?php echo BASE_URL; ?>?page=delete_subject&subject=<?php echo $subject_id; ?>"><i class="ik ik-trash-2"></i></a>
+                                        <a href="<?php urlGenerator( 
+                          [
+                            'mode' => 'model', 
+                            'page' => 'delete_subject', 
+                            'subject' => $subject_id 
+                          ]
+                        );?>"><i class="ik ik-trash-2"></i></a>
                                     </div>
                                 </td>
                                 <?php  $x++;  endwhile; endif; ?> 

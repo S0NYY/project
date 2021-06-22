@@ -10,5 +10,6 @@ $sql="UPDATE students SET status_id='$status_id'
 } else {
   echo "Error updating record: " . mysqli_error($conn);
 }
+header('location:' . BASE_URL . '?mode=view&page=student_profile_preview&student=' . $student_id);
 mysqli_close($conn);
 ?>

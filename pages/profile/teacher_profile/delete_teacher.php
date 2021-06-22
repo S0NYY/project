@@ -33,7 +33,7 @@ if (mysqli_num_rows($teacherSuspended) > 0){
   }
 }
 
-//header('location: ../administrator_page/teacher_form.php');
+header('location:' . BASE_URL . '?mode=view&page=teachers');
 mysqli_close($conn);
 
 ?>

@@ -11,5 +11,6 @@ $sql="UPDATE teachers SET status_id='$status_id'
 } else {
   echo "Error updating record: " . mysqli_error($conn);
 }
+header('location:' . BASE_URL . '?mode=view&page=teacher_profile_preview&teacher=' . $teacher_id);
 mysqli_close($conn);
 ?>

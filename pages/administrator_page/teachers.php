@@ -51,12 +51,24 @@ require_once(FUNCTION_DIR . 'administrator_function.php');
                             <tr>
                                 <td><?php echo $x?></td>
                                     <td><img src="img/users/user.jpg" class="table-user-thumb" alt=""></td>
-                                    <td><a href="<?php echo BASE_URL; ?>?page=teacher_profile&teacher=<?php echo $teacher_id?>"><?php echo $first_name . ' ' . $last_name ?></td></a>
+                                    <td><a href="<?php  urlGenerator( 
+                          [
+                            'mode' => 'view', 
+                            'page' => 'teacher_profile', 
+                            'teacher' => $teacher_id 
+                          ]
+                        );?>"><?php echo $first_name . ' ' . $last_name ?></td></a>
                                     <td><?php echo $group_number ?></td>
                                     <td><?php echo $course_title ?></td>
                                     <td><?php echo $city_title?></td>
                                     <td><?php echo $status_title ?></td>
-                                    <td><a href="<?php echo BASE_URL; ?>?page=teacher_profile_preview&teacher=<?php echo $teacher_id?>"><i class="ik ik-settings"></i></a></td>
+                                    <td><a href="<?php  urlGenerator( 
+                          [
+                            'mode' => 'view', 
+                            'page' => 'teacher_profile_preview', 
+                            'teacher' => $teacher_id 
+                          ]
+                        );?>"><i class="ik ik-settings"></i></a></td>
                                     <td><?php echo $datatime?></td>
                                 </td>
                             </tr>
