@@ -1,0 +1,831 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    
+}
+
+h1, h2, h3, h4, p, a {
+  font-family: ninomtavruli;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.flextengo {
+    justify-content: space-around;
+}
+
+.student-infotengo {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    
+
+}
+
+
+.privateinfotengo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstnametengo {
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #ffffff 100%);
+        background-color:#f9f9f9;
+        border-radius:20px;
+        border:1px solid #eeeeee;
+        display: block;
+        cursor: pointer;
+        color:#303030;
+        /* font-family:Arial; */
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight:bold;
+        padding:10px 0px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffffff;
+        width: 100%;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 2%;
+        
+}
+   
+/* body {
+    background-image: linear-gradient(-210deg, #9bc3f8, #2a6ec7, #4799e6, #0036ac, #010058);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    
+    
+} */
+
+
+
+.anonymoustengo {
+    width: 50%;
+    
+    
+}
+
+.infowraptengo {
+    position: relative;
+    
+    
+    
+    top: 50%;
+    transform: translate(0%, -50%);
+
+
+}
+
+    
+
+
+
+
+.surnametengo {
+    
+    
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #ffffff 100%);
+        background-color:#f9f9f9;
+        border-radius:20px;
+        border:1px solid #dcdcdc;
+        display: block;
+        cursor: pointer;
+        color:#303030;
+        /* font-family:Arial; */
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight:bold;
+        padding:10px 0px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffffff;
+        width: 100%;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 2%;
+        
+
+}
+
+.proffesiontengo {
+    
+    
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #ffffff 100%);
+        background-color:#f9f9f9;
+        border-radius:20px;
+        border:1px solid #dcdcdc;
+        display: block;
+        cursor: pointer;
+        
+        color:#303030;
+        /* font-family:Arial; */
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight:bold;
+        padding:10px 0px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffffff;
+        width: 100%;
+        text-align: center;
+        
+        margin-top: 5%;
+        margin-bottom: 2%;
+        
+
+}
+
+.leavetengo {
+
+    
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:20px;
+	border:1px solid #4e6096;
+	display: block;
+	cursor:pointer;
+	color:#ffffff;
+	/* font-family:Arial; */
+	font-size:12px;
+	padding:6px 0px;
+    width: 100px;
+	text-decoration:none;
+    text-align: center;
+    position: relative;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    
+    
+    
+
+    
+}
+
+.javascripttengo, .adobeillustratortengo, .languagetengo, .communicationtengo, .mewarmeobatengo {
+    
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #ffffff 100%);
+        background-color:#f9f9f9;
+        border-radius: 20px;
+        border:1px solid #dcdcdc;
+        display: block;
+        cursor: pointer;
+        color:#303030;
+        /* font-family:Arial; */
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight:bold;
+        padding:10px 0px;
+        text-decoration:none;
+        text-align: center;
+        width: 100%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        
+
+    
+}
+
+
+
+
+.group2tengo {
+    
+    
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #ffffff 100%);
+        background-color:#f9f9f9;
+        border-radius:20px;
+        border:1px solid #dcdcdc;
+        display: block;
+        cursor: pointer;
+
+        
+        color:#666666;
+        /* font-family:Arial; */
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight:bold;
+        padding:10px 40px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffffff;
+        text-align: center;
+}
+
+.id2tengo {
+    margin-top: 20px;
+    
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #ffffff 100%);
+        background-color:#f9f9f9;
+        border-radius:20px;
+        border:1px solid #dcdcdc;
+        display: block;
+        cursor: pointer;
+        color:#666666;
+        /* font-family:Arial; */
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight:bold;
+        padding:10px 40px;
+        text-decoration:none;
+        text-align: center;
+}
+        
+
+.lefttengo {
+    width: 100%;
+
+    
+}
+
+
+
+.righttengo {
+    width: 100%; 
+
+}
+
+
+.correcttengo {
+    height: 45px;
+    width: 35px;
+    margin-right: -39px;
+    margin-top: 25px;
+}
+
+.correct2tengo {
+    height: 45px;
+    width: 35px;
+    margin-right: -50px;
+    margin-top: 25px;
+}
+.text-pngtengo {
+    display: flex;
+}
+
+.infotengo {
+    width: 100%;
+}
+
+.imgwraptengo {
+    width: 45%;
+    height: 100%;
+   
+}
+
+.persontengo {
+    width: 150px;
+    height: 150px;
+
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+    .flextengo {
+        display: flex;
+        text-align: center;
+    }
+    .rightwraptengo, .leftwraptengo {
+        position: relative;
+        top: 50%;
+        transform: translate(0%, -50%);
+        width: 90%;
+    }
+    .lefttengo {
+        width: 30%;
+        
+    }
+
+    .righttengo {
+        width: 30%;  
+    }
+    
+}
+
+@media screen and (min-width: 480px) {
+
+    
+    
+    
+}
+
+
+/* .bodygio {
+    background-color: rgb(144, 237, 253);
+} */
+
+.formgio {
+    background-color: white;
+}
+
+.textwrapgio {
+    display: flex;
+}
+
+.numbergio {
+    background-color:#ffffff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border:3px solid #87f5fd;
+    display:inline-block;
+    color:#000000;
+    /* font-family:Arial; */
+    font-size:17px;
+    padding:3px 3px;
+    text-decoration:none;
+}
+
+.questiongio {
+    margin-top: 5px;
+    margin-left: 1%;
+}
+
+.answerswrapgio {
+    margin-left: 2%;
+}
+
+.formgio {
+    background-color:#ffffff;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:block;
+    color:#000000;
+    /* font-family:Arial; */
+    font-size:19px;
+    padding:12px 37px;
+    text-decoration:none;
+}
+
+.formwrapgio {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.subbtngio {
+    background-color:#2433fc;
+    border-radius:28px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    /* font-family:Arial; */
+    font-size:17px;
+    padding:8px 31px;
+    text-decoration:none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.answergio {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+
+.bodygio {
+    background-color: rgb(144, 237, 253);
+}
+
+.titlegio {
+    
+    background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+    background-color:#ffffff;
+    border-radius:8px;
+    display:inline-block;
+    color:#000000;
+    /* font-family:Arial; */
+    font-size:20px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 8%;
+}
+
+.buttongio {
+    background-color:#2433fc;
+    border-radius:28px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    /* font-family:Arial; */
+    font-size:17px;
+    padding:8px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.centergio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    
+}
+
+.headergio {
+  background-color: rgb(0, 153, 255);
+  height: 15%;
+  overflow: hidden;
+}
+
+.profilegio {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.profileimgwrapgio {
+  width: 12%;
+  margin-right: 5%;
+  height: 100%;
+}
+
+.profileflexgio {
+  display: flex;
+  width: 60%;
+}
+
+.headerflexgio {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 2%;
+}
+
+.idwrapgio p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.exitwrapgio {
+  width: 40%;
+}
+
+.exitwrapgio p {
+  position: relative;
+  left: 100%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+    border-radius:28px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    color:#ffffff;
+    /* font-family:Arial; */
+    font-size:17px;
+    padding:8px 31px;
+    text-decoration:none;
+    text-align: center;
+}
+
+
+
+/* საწყისები */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+/* საერთო */
+.auth-bindermaya,
+.auth-bindermaya .wrappermaya
+{
+  display: flex;
+}
+.auth-bindermaya .wrappermaya
+{
+  flex-wrap: wrap;
+}
+.auth-bindermaya
+{
+  justify-content: center;
+}
+.auth-bindermaya
+{
+  align-items: center;
+}
+.authenticationmaya legend,
+.authenticationmaya label
+{
+  display: none;
+}
+.authenticationmaya fieldset,
+.authenticationmaya input
+{
+  border: none;
+}
+.auth-bindermaya .identationmaya,
+.auth-bindermaya .authenticationmaya,
+.authenticationmaya input
+{
+  box-sizing: border-box;
+}
+/* კერძო */
+.auth-bindermaya {
+  /* background-color: lightblue; */
+  height: 100%;
+}
+.auth-bindermaya .wrappermaya {
+  background: linear-gradient(to bottom, #0000ff 0%, #3399ff 100%);
+  
+}
+.auth-bindermaya .wrappermaya {
+  border-radius: 10px;
+  box-shadow:none;
+  width: 90%;
+}
+.auth-bindermaya .identationmaya,
+.auth-bindermaya .authenticationmaya
+{
+  padding: 10% 5%;
+  width: 100%;
+}
+.auth-bindermaya .authenticationmaya input[type='text'],
+.auth-bindermaya .authenticationmaya input[type='password']
+{
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+.buttonmaya {
+  border-radius: 5px;
+  padding: 10px 40px;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  color: white;
+  border-radius: 24px;
+}
+.auth-bindermaya .authenticationmaya input {
+  margin-bottom: 20px;
+}
+ .authomaya {
+  color: white;
+  text-transform: uppercase;
+   white-space: pre-wrap;
+   word-spacing:5px; 
+   letter-spacing: 5px;/*ტექსტის დაშორება*/
+   text-align: center;
+}
+.imgmaya{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%;
+  margin-bottom: 5%;
+}
+.academymaya{
+  position: relative;
+  font-size: 80%;
+}
+.identationmaya{
+  position: relative;
+  top: 50%;
+  transform: translate(-0%);
+  /* margin-top: 5%; */
+
+}
+
+.titlemaya {
+  text-align: center;
+  color: white;
+  margin-bottom: 2%;
+  font-size: 150%;
+}
+
+.title2maya {
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.rowmaya {
+  position: relative;
+}
+
+.authenticationmaya {
+  position: relative;
+}
+
+
+/* tablets > */
+@media screen and (min-width: 1150px) {
+  .auth-bindermaya .identationmaya,
+  .auth-bindermaya .authenticationmaya
+  {
+    width: 50%;
+  }
+  .auth-bindermaya .wrappermaya {
+    box-shadow: -10px 10px 5px 5px #aaaaaa;
+    width: 50%;
+  }
+  .identationmaya, .authenticationmaya{
+    width: 50%;
+  }
+}
+
+.auth-bindermaya2,
+.auth-bindermaya2 .wrappermaya2
+{
+  display: flex;
+}
+.auth-bindermaya2 .wrappermaya2
+{
+  flex-wrap: wrap;
+}
+.auth-bindermaya2
+{
+  justify-content: center;
+}
+.auth-bindermaya2
+{
+  align-items: center;
+}
+
+/* კერძო */
+.auth-bindermaya2 {
+
+  height: 100%;
+}
+.auth-bindermaya2 .wrappermaya2 {
+  background: linear-gradient(to bottom, #0000ff 0%, #3399ff 100%);
+  
+}
+.auth-bindermaya2 .wrappermaya2 {
+  border-radius: 10px;
+  box-shadow:none;
+  width: 90%;
+}
+
+.imgmaya2{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 150px;
+  margin-bottom: 5%;
+}
+/*.academy{
+  position: relative;
+  font-size: 70%;
+  margin-left: 30%; 
+}*/
+
+.title2maya2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 2%;
+}
+
+.resultmaya2 {
+  text-align: center;
+  color: white;
+}
+.identationmaya2{
+  align-items: center;
+  margin-top: 5%;
+  font-size: 80%;
+  /*margin-left: 25%;*/
+}
+.auth-bindermaya2 input[type='submit'] {
+  border-radius: 5px;
+  padding: 10px 40px;
+  background: none;
+  display: block;
+  /*margin: 20px auto;*/
+  text-align: center;
+  border: 2px solid white;
+  color: white;
+  border-radius: 24px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.buttonwrapmaya2 {
+  width: 100%;
+}
+.auth-bindermaya2 .identationmaya2,
+.auth-bindermaya2 .authenticationmaya2
+{
+  padding: 7% 5%;
+  width: 100%;
+}
+.resultmaya2{
+  /*margin-left: 14%;*/
+  font-size: 150%;
+}
+
+
+/* tablets > */
+@media screen and (min-width: 992px) {
+  .auth-bindermaya2 .identationmaya2,
+  .auth-bindermaya2 .wrappermaya2,
+  .auth-bindermaya2 .academymaya2
+  {
+    width: 100%;
+  }
+  .auth-bindermaya2 .wrappermaya2 {
+    box-shadow: -10px 10px 5px 5px #aaaaaa;
+    width: 50%;
+  }
+  .identationmaya2, .academymaya2{
+    width: 50%;
+  }
+  
+}
+
+
+
+
+
+
+
+.titlegioori {
+    
+    background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+    background-color:#ffffff;
+    border-radius:8px;
+    display:inline-block;
+    color:#000000;
+    /* font-family:Arial; */
+    font-size:20px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 8%;
+    text-align: center;
+}
+
+.buttongioori {
+    background-color:#2433fc;
+    border-radius:28px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    /* font-family:Arial; */
+    font-size:17px;
+    padding:8px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.centergioori {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    
+}
+
+.backgroundcolor {
+  background-color: #b1fff5;
+}
+
+@font-face {
+  font-family: ninomtavruli;
+  src: url(bpg_nino_mtavruli_normal.ttf);
+}
+
+
+
