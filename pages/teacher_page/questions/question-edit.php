@@ -1,48 +1,53 @@
 <?php
 require_once(FUNCTION_DIR . 'preview_function.php');
 
-$test_id = isset($_GET['test']) ? $_GET['test'] : 0;
-$teacher_id = isset($_POST['teacher']) ? $_POST['teacher'] : '';
-$question_id = isset($_GET['question']) ? $_GET['question'] : 0;
-$answer_id = isset($_GET['answer']) ? $_GET['answer'] : '';
-$questionFileName = isset($_POST['questionfile']) ? $_POST['questionfile'] : '';
-$answerFileName = isset($_POST['answerfile']) ? $_POST['answerfile'] : '';
+$question_file = isset($_FILES['question_file']) ? $_FILES['question_file'] : '';
+$answer_file = isset($_FILES['answer_file']) ? $_FILES['answer_file'] : '';
 
-if(!$test_id && $question_id) {
-  $questions = getQuestionById($conn, $question_id); // კითხვების მონაცემების წამოღება
-  $test_id = getTestIdByQuestionId($conn, $question_id);
-} else {
-  $questions = getQuestionsByTestId($conn, $test_id); // კითხვების მონაცემების წამოღება
+
+$question_id = isset($_POST['question_id']) ? $_POST['question_id'] : 0;
+$answer_id = isset($_POST['answer_id']) ? $_POST['answer_id'] : '';
+
+// კითხვა
+
+if($question_file) { 
+  fileUploadOnEdit (
+    $conn, 
+    $file_refs = $question_file, 
+    $item_ids = $question_id,
+    $item_type_id = 1
+  );
+}
+// პასუხი 
+if($answer_file) { 
+  fileUploadOnEdit (
+    $conn, 
+    $file_refs = $answer_file, 
+    $item_ids = $answer_id,
+    $item_type_id = 2
+  );
 }
 
-while($row = mysqli_fetch_assoc($questions)) : // ტესტი
+//while($row = mysqli_fetch_assoc($questions)) : // ტესტი
   
-  // კითხვა
 
-  $qId = $row['question_id'];
-  $qHeadline = isset($_POST['q_' . $qId]) ? $_POST['q_' . $qId] : '';
-    $sql = "UPDATE questions SET head_line='$qHeadline' WHERE question_id=$qId";
+/*     $sql = "UPDATE questions SET head_line='$qHeadline' WHERE question_id=$qId";
 
     if (!mysqli_query($conn, $sql)) {
       echo "Error updating record: " . mysqli_error($conn);
-    }
-    $question_last_id = mysqli_insert_id($conn);
-    /*if ($questionFileName) {
+    } */
+    /*if ($questionFile) {
     $sql = "INSERT INTO photos_test (file_name, item_id, item_type_id)
-         VALUES ('$questionFileName', '$question_id', '1')";
+         VALUES ('$questionFile', '$question_id', '1')";
          if (!mysqli_query($conn, $sql)) echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }*/
 
-  /*$questionfile = fileUpload (
-    $conn, 
-    $fileRef = $_FILES["questionfile"], 
-    $field_index = $question_id, 
-    $item_last_id = $question_last_id, 
-    $item_type_id = 1
-  );
-  echo $fileRef;*/
-  // დასრულდა კითხვა
+  /* 
+  ); */
 
+  //echo $fileRef;
+  // დასრულდა კითხვა
+/* 
   // პასუხი 
 
   $answersByQId = getAnswersData($conn, $qId);
@@ -56,16 +61,16 @@ while($row = mysqli_fetch_assoc($questions)) : // ტესტი
     if (!mysqli_query($conn, $sql)) {
       echo "Error updating record: " . mysqli_error($conn);
     }
-     /*if ($answerFileName) {
+     if ($answerFileName) {
     $sql = "INSERT INTO photos_test (file_name, item_id, item_type_id)
          VALUES ('$answerFileName', '$answer_id', '2')";
          if (!mysqli_query($conn, $sql)) echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }*/
-    endwhile; // დასრულდა პასუხი
-
+    }
+  endwhile; // დასრულდა პასუხი
+ */
     
 
-endwhile; // დასრულდა ტესტი
+//endwhile; // დასრულდა ტესტი
 
 //კითხვის ფოტოს დამატება ჩასწორების დროს 
 
@@ -83,7 +88,7 @@ endwhile; // დასრულდა ტესტი
     $item_type_id = 1
   );
 }*/
-header('location:' . BASE_URL . '?mode=view&page=question_preview_insert&test=' . $test_id . "&teacher=" . $teacher_id);
+//header('location:' . BASE_URL . '?mode=view&page=question_preview_insert&test=' . $test_id . "&teacher=" . $teacher_id);
 mysqli_close($conn);
 
 ?>

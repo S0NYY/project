@@ -46,7 +46,8 @@ $gData = getGroupData($conn, $teacher_id );
                 <?php
                     else:
                 ?>
-                    <input type="file" name="questionfile" value="<?php echo $question_id ?>">
+                    <input type="file" name="question_file[]" >
+                    <input type="hidden" name="question_id[]" value="<?php echo $question_id ?>">
                 <?php 
                     endif;
                 ?>
@@ -75,7 +76,8 @@ $gData = getGroupData($conn, $teacher_id );
                   <?php 
                       else:
                   ?>
-                      <input type="file" name="answerfile" value="<?php echo $answer_id ?>">
+                      <input type="file" name="answer_file[]">
+                      <input type="hidden" name="answer_id[]" value="<?php echo $answer_id; ?>">
                   <?php 
                       endif;
                   ?>
