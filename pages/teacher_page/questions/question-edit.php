@@ -5,8 +5,13 @@ $question_file = isset($_FILES['question_file']) ? $_FILES['question_file'] : ''
 $answer_file = isset($_FILES['answer_file']) ? $_FILES['answer_file'] : '';
 
 
+$question = isset($_POST['question']) ? $_POST['question'] : '';
 $question_id = isset($_POST['question_id']) ? $_POST['question_id'] : 0;
+
+$answer = isset($_POST['answer']) ? $_POST['answer'] : '';
 $answer_id = isset($_POST['answer_id']) ? $_POST['answer_id'] : '';
+
+$is_correct = isset($_POST['is_correct']) ? $_POST['is_correct'] : '';
 
 // კითხვა
 
@@ -26,6 +31,25 @@ if($answer_file) {
     $item_ids = $answer_id,
     $item_type_id = 2
   );
+}
+
+
+for ($i=0; $i < count($question); $i++) { 
+  $question_val = $question[$i];
+  $question_id_val = $question_id[$i];
+  $sql = "UPDATE questions SET head_line='$question_val' WHERE question_id=$question_id_val";
+  if (!mysqli_query($conn, $sql)) { echo "Error updating record: " . mysqli_error($conn); }
+  
+  for ($j=0; $j < count($answer); $j++) { 
+    $answer_val = $answer[$j];
+    $answer_id_val = $answer_id[$j];
+    $is_correct_val = $is_correct[$j];
+    //var_dump($is_correct);
+    echo $is_correct_val;
+
+    $sql = "UPDATE answers SET body_text='$answer_val', is_correct='$is_correct_val' WHERE answer_id=$answer_id_val";
+    if (!mysqli_query($conn, $sql)) { echo "Error updating record: " . mysqli_error($conn); }
+  }
 }
 
 //while($row = mysqli_fetch_assoc($questions)) : // ტესტი

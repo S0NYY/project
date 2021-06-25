@@ -29,11 +29,11 @@ $gData = getGroupData($conn, $teacher_id );
           <?php
             while($qData = mysqli_fetch_assoc($questions)) : // ტესტი
             $question_id = $qData['question_id'];
-            $q_fieldName = 'q_' . $question_id;
           ?>
               <div class="form-group">
                 <label for="exampleInputName1">კითხვა</label>
-                <textarea type="text" class="form-control" id="exampleInputName1"  name="<?php echo $q_fieldName; ?>"><?php echo $qData['head_line']; ?></textarea>
+                <textarea type="text" class="form-control" id="exampleInputName1"  name="question[]"><?php echo $qData['head_line']; ?></textarea>
+                <input type="hidden" name="question_id[]" value="<?php echo $question_id ?>">
                 <?php 
                       $getQuestionItemId =getQuestionItemId($conn, $question_id);
                       $question_item = $getQuestionItemId['item_id'];
@@ -47,7 +47,6 @@ $gData = getGroupData($conn, $teacher_id );
                     else:
                 ?>
                     <input type="file" name="question_file[]" >
-                    <input type="hidden" name="question_id[]" value="<?php echo $question_id ?>">
                 <?php 
                     endif;
                 ?>
@@ -59,11 +58,10 @@ $gData = getGroupData($conn, $teacher_id );
                     while($row = mysqli_fetch_assoc($answersByQId)) :
                       $answer_id = $row['answer_id'];
                       $is_correct = $row['is_correct'];
-                      $a_fieldName = 'a_' . $row['answer_id'];
-                      $c_fieldName = 'c_' . $row['answer_id'];
                   ?>
               <div class="form-group">
-              <textarea type="text" class="form-control" id="exampleInputEmail3"  name="<?php echo $a_fieldName; ?>"><?php echo $row['body_text']; ?></textarea>
+              <textarea type="text" class="form-control" id="exampleInputEmail3"  name="answer[]"><?php echo $row['body_text']; ?></textarea>
+              <input type="hidden" name="answer_id[]" value="<?php echo $answer_id; ?>">
                   <?php   
                       $getAnswerItemId = getAnswerItemId($conn, $answer_id);
                       $answer_item = $getAnswerItemId['item_id'];
@@ -77,12 +75,11 @@ $gData = getGroupData($conn, $teacher_id );
                       else:
                   ?>
                       <input type="file" name="answer_file[]">
-                      <input type="hidden" name="answer_id[]" value="<?php echo $answer_id; ?>">
                   <?php 
                       endif;
                   ?>
               <div class="form-group">
-                    <select class="form-control" id="exampleSelectGender" name="<?php echo $c_fieldName;?>">
+                    <select class="form-control" id="exampleSelectGender" name="is_correct[]">
                     <option value="">-----------------</option>
                   <?php
                     foreach($aPreferences as $keys => $value) :
