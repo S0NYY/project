@@ -62,19 +62,20 @@ $gData = getGroupData($conn, $teacher_id );
               <div class="form-group">
               <textarea type="text" class="form-control" id="exampleInputEmail3"  name="answer[]"><?php echo $row['body_text']; ?></textarea>
               <input type="hidden" name="answer_id[]" value="<?php echo $answer_id; ?>">
-                  <?php   
+              <?php   
                       $getAnswerItemId = getAnswerItemId($conn, $answer_id);
                       $answer_item = $getAnswerItemId['item_id'];
-                  if ($answer_item) :
-                      $getAnswersPhotos = getAnswersPhotos($conn, $answer_item);
-                      $answerImage = $getAnswersPhotos['file_name'];
-                  ?>
+                      if ($answer_item) :
+                        $getAnswersPhotos = getAnswersPhotos($conn, $answer_item);
+                        $answerImage = $getAnswersPhotos['file_name'];
+                        ?>
                       <img src="img/photos_test/<?php echo $answerImage?>"  width="50">
                       <a href="<?php urlGenerator(['mode' => 'model', 'page' => 'question_photo_delete', 'question' => $question_id, 'answer' => $answer_id, 'teacher' => $teacher_id])?>" class="ik ik-trash-2 f-16 text-red"></a>
-                  <?php 
+                      <?php 
                       else:
-                  ?>
+                        ?>
                       <input type="file" name="answer_file[]">
+                      <input type="hidden" name="answer_id_for_file[]" value="<?php echo $answer_id; ?>">
                   <?php 
                       endif;
                   ?>

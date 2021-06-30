@@ -6,10 +6,11 @@ $answer_file = isset($_FILES['answer_file']) ? $_FILES['answer_file'] : '';
 
 
 $question = isset($_POST['question']) ? $_POST['question'] : '';
-$question_id = isset($_POST['question_id']) ? $_POST['question_id'] : 0;
+$question_id = isset($_POST['question_id']) ? $_POST['question_id'] : 0; // array
 
 $answer = isset($_POST['answer']) ? $_POST['answer'] : '';
 $answer_id = isset($_POST['answer_id']) ? $_POST['answer_id'] : '';
+$answer_id_for_file = isset($_POST['answer_id_for_file']) ? $_POST['answer_id_for_file'] : 0; // array
 
 $is_correct = isset($_POST['is_correct']) ? $_POST['is_correct'] : '';
 
@@ -24,11 +25,21 @@ if($question_file) {
   );
 }
 // პასუხი 
+
+//var_dump($answer_id_for_file);
+//echo count($answer_file['name']) . '<br>';
+//echo count($answer_file['name']) . '<br>';
+
+//foreach ($answer_file['name'] as $key => $value) {
+/* foreach ($answer_id_for_file as $key => $value) {
+  echo 'key: ' . $key . ' - Value: ' . $value . '<br>';
+} */
+
 if($answer_file) { 
   fileUploadOnEdit (
     $conn, 
     $file_refs = $answer_file, 
-    $item_ids = $answer_id,
+    $item_ids = $answer_id_for_file,
     $item_type_id = 2
   );
 }
@@ -51,6 +62,10 @@ for ($i=0; $i < count($question); $i++) {
     if (!mysqli_query($conn, $sql)) { echo "Error updating record: " . mysqli_error($conn); }
   }
 }
+
+
+
+
 
 //while($row = mysqli_fetch_assoc($questions)) : // ტესტი
   
